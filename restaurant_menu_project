@@ -1,0 +1,2081 @@
+from tkinter import *
+from tkinter import ttk
+from tkinter import messagebox
+from random import *
+import random
+
+#MOHAMMAD HUSSAIN & NARDOS
+#FINAL PROJECT
+
+top_bj_color = '#7094b3'
+content_1 = '#FFF5EE'
+content_2 = '#FFF5EE'
+bottom_bj_color = '#7094b3'
+entry_pmnt_color = 'black'
+
+root = Tk()
+root.title('Restaurant Menu')
+
+main_frame = Frame(root, bg=content_1, height='1000')
+main_frame.pack(expand=True, fill='both')
+
+#resturannt menu etc
+title_fram = Frame(main_frame, width='1200', height='100', bg=top_bj_color)
+title_fram.pack(side='top', fill='x')
+
+TITLE_LABEL = Label(title_fram,
+                    font="Comic 30 bold",
+                    bg=top_bj_color,
+                    text="INDO-PAK FOOD PALACE")
+TITLE_LABEL.pack()
+TITLE_LABEL = Label(title_fram,
+                    font="Comic 15",
+                    bg=top_bj_color,
+                    text="Best Indo-Pak Food in Town")
+TITLE_LABEL.pack()
+TITLE_LABEL = Label(title_fram,
+                    font="Comic 12 ",
+                    bg=top_bj_color,
+                    text="9449 Briar Forest Dr, Houston TX 77063")
+TITLE_LABEL.pack()
+
+head_fram = Frame(main_frame, bg='orange', width='1200', height='100')
+head_fram.pack(side='top', fill='x')
+
+#items head,,, my order
+head_fram_left = Frame(head_fram, width='300', height='100')
+head_fram_left.pack(side='left', fill='both')
+
+headlbl = Label(head_fram_left, text='\tReceipt', font='comic 20 bold')
+headlbl.pack(anchor='center', expand=True, pady=(15, 0))
+
+#items head,,, items
+head_fram_right = Frame(head_fram, width='500', height='100')
+head_fram_right.pack(side='left', fill='both', expand=True)
+
+itemslbl = Label(head_fram_right, text='MAIN MENU', font='comic 20 bold')
+itemslbl.pack(anchor='center', side='bottom', expand=True, pady=(15, 0))
+
+#receipt and content combined
+r_c_frame = Frame(main_frame, width='900', bd=1, height='900')
+r_c_frame.pack(side='top', fill='both', expand=True)
+
+#receipt items
+rcp_frame = Frame(r_c_frame, bg=content_1, width=200, bd=1, height='900')
+rcp_frame.pack(side='left', fill='both', padx=(2, 2))
+
+rcp_frame.config(highlightbackground='black',
+                 highlightthickness=1,
+                 highlightcolor='black')
+
+# meal frames and items
+meal_frame = Frame(r_c_frame, bg=content_1, bd=2, width='700', height='900')
+meal_frame.pack(side='left', fill='both', expand=True, padx=(1, 3))
+
+meal_frame.config(highlightbackground='black',
+                  highlightthickness=1,
+                  highlightcolor='black')
+#meals top
+content_frame1 = Frame(meal_frame, bg=content_1, width='800', height='300')
+content_frame1.pack(side='top', fill='both', expand=True)
+
+content_frame2 = Frame(meal_frame, bg=content_1, width='800', height='300')
+content_frame2.pack(side='top', fill='both', expand=True)
+
+pmnt_frame = Frame(meal_frame, bg=bottom_bj_color, width='800', height='300')
+pmnt_frame.pack(side='top', fill='both', expand=True)
+
+# ==================== body content frames =====================
+f1 = Frame(content_frame1, width=300, bg=content_1, relief="raised")
+f1.pack(side=LEFT, expand=True)
+f2 = Frame(content_frame1, width=300, bg=content_1, relief="raised")
+f2.pack(side=LEFT, expand=True)
+f3 = Frame(content_frame1, width=300, bg=content_1, relief="raised")
+f3.pack(side=LEFT, expand=True)
+
+f4 = Frame(content_frame2, width=300, bg=content_1, relief="raised")
+f4.pack(side=LEFT, expand=True)
+f5 = Frame(content_frame2, width=300, bg=content_2, relief="raised")
+f5.pack(side=LEFT, expand=True)
+f6 = Frame(content_frame2, width=300, bg=content_1, relief="raised")
+f6.pack(side=LEFT, expand=True)
+
+f7 = Frame(pmnt_frame, width=300, bg=bottom_bj_color, relief="raised")
+f7.pack(side=LEFT, expand=True)
+f8 = Frame(pmnt_frame, width=300, bg=bottom_bj_color, relief="raised")
+f8.pack(side=LEFT, expand=True)
+f9 = Frame(pmnt_frame, width=300, bg=bottom_bj_color, relief="raised")
+f9.pack(side=LEFT, expand=True)
+
+# ============ STARTS HERE ==============
+
+# =================VARIABLES==================
+checked_color = '#009900'
+selected_hex = "#44444"
+
+#TAX RATE = 8.25%
+
+intvar1 = IntVar()
+intvar2 = IntVar()
+intvar3 = IntVar()
+intvar4 = IntVar()
+intvar5 = IntVar()
+intvar6 = IntVar()
+intvar7 = IntVar()
+intvar8 = IntVar()
+intvar9 = IntVar()
+intvar10 = IntVar()
+intvar11 = IntVar()
+intvar12 = IntVar()
+intvar13 = IntVar()
+intvar14 = IntVar()
+intvar15 = IntVar()
+intvar16 = IntVar()
+intvar17 = IntVar()
+intvar18 = IntVar()
+intvar19 = IntVar()
+intvar20 = IntVar()
+intvar21 = IntVar()
+intvar22 = IntVar()
+intvar23 = IntVar()
+intvar24 = IntVar()
+intvar25 = IntVar()
+intvar26 = IntVar()
+intvar27 = IntVar()
+intvar28 = IntVar()
+intvar29 = IntVar()
+intvar30 = IntVar()
+
+intvar1.set(0)
+intvar2.set(0)
+intvar3.set(0)
+intvar4.set(0)
+intvar5.set(0)
+intvar6.set(0)
+intvar7.set(0)
+intvar8.set(0)
+intvar9.set(0)
+intvar10.set(0)
+intvar11.set(0)
+intvar12.set(0)
+intvar13.set(0)
+intvar14.set(0)
+intvar15.set(0)
+intvar16.set(0)
+intvar17.set(0)
+intvar18.set(0)
+intvar19.set(0)
+intvar20.set(0)
+intvar21.set(0)
+intvar22.set(0)
+intvar23.set(0)
+intvar24.set(0)
+intvar25.set(0)
+intvar26.set(0)
+intvar27.set(0)
+intvar28.set(0)
+intvar29.set(0)
+intvar30.set(0)
+
+stvar1 = StringVar()
+stvar2 = StringVar()
+stvar3 = StringVar()
+stvar4 = StringVar()
+stvar5 = StringVar()
+stvar6 = StringVar()
+stvar7 = StringVar()
+stvar8 = StringVar()
+stvar9 = StringVar()
+stvar10 = StringVar()
+stvar11 = StringVar()
+stvar12 = StringVar()
+stvar13 = StringVar()
+stvar14 = StringVar()
+stvar15 = StringVar()
+stvar16 = StringVar()
+stvar17 = StringVar()
+stvar18 = StringVar()
+stvar19 = StringVar()
+stvar20 = StringVar()
+stvar21 = StringVar()
+stvar22 = StringVar()
+stvar23 = StringVar()
+stvar24 = StringVar()
+stvar25 = StringVar()
+stvar26 = StringVar()
+stvar27 = StringVar()
+stvar28 = StringVar()
+stvar29 = StringVar()
+stvar30 = StringVar()
+
+stvar1.set(0)
+stvar2.set(0)
+stvar3.set(0)
+stvar4.set(0)
+stvar5.set(0)
+stvar6.set(0)
+stvar7.set(0)
+stvar8.set(0)
+stvar9.set(0)
+stvar10.set(0)
+stvar11.set(0)
+stvar12.set(0)
+stvar13.set(0)
+stvar14.set(0)
+stvar15.set(0)
+stvar16.set(0)
+stvar17.set(0)
+stvar18.set(0)
+stvar19.set(0)
+stvar20.set(0)
+stvar21.set(0)
+stvar22.set(0)
+stvar23.set(0)
+stvar24.set(0)
+stvar25.set(0)
+stvar26.set(0)
+stvar27.set(0)
+stvar28.set(0)
+stvar29.set(0)
+stvar30.set(0)
+
+# =============PAYMENT VARIBALES====
+tipvar = StringVar()
+tipvar.set('')
+
+foodcostvar = StringVar()
+foodcostvar.set('$0.00')
+
+vartax = StringVar()
+vartax.set('$0.00')
+
+vartotal = StringVar()
+vartotal.set('$0.00')
+
+varsubtotals = StringVar()
+varsubtotals.set('$0.00')
+
+cashvar = StringVar()
+cashvar.set('')
+
+duevar = StringVar()
+duevar.set('$0.00')
+
+changevar = StringVar()
+changevar.set('$0.00')
+
+# ======== commands and functions =======
+
+
+def check1():
+    if intvar1.get() == 1:
+        aptzrs_btn1.configure(fg=checked_color)
+        aptzrs_btn1Entry.configure(fg=checked_color, state=NORMAL)
+        stvar1.set('1')
+    elif intvar1.get() == 0:
+        aptzrs_btn1.configure(fg="black")
+        aptzrs_btn1Entry.configure(fg="black", state=DISABLED)
+        stvar1.set(0)
+
+
+def check2():
+    if intvar2.get() == 1:
+        aptzrs_btn2.configure(fg=checked_color)
+        aptzrs_btn2Entry.configure(fg=checked_color, state=NORMAL)
+        stvar2.set('1')
+    elif intvar2.get() == 0:
+        aptzrs_btn2.configure(fg="black")
+        aptzrs_btn2Entry.configure(fg="black", state=DISABLED)
+        stvar2.set(0)
+
+
+def check3():
+    if intvar3.get() == 1:
+        aptzrs_btn3.configure(fg=checked_color)
+        aptzrs_btn3Entry.configure(fg=checked_color, state=NORMAL)
+        stvar3.set('1')
+    elif intvar3.get() == 0:
+        aptzrs_btn3.configure(fg="black")
+        aptzrs_btn3Entry.configure(fg="black", state=DISABLED)
+        stvar3.set(0)
+
+
+def check4():
+    if intvar4.get() == 1:
+        aptzrs_btn4.configure(fg=checked_color)
+        aptzrs_btn4Entry.configure(fg=checked_color, state=NORMAL)
+        stvar4.set('1')
+    elif intvar4.get() == 0:
+        aptzrs_btn4.configure(fg="black")
+        aptzrs_btn4Entry.configure(fg="black", state=DISABLED)
+        stvar4.set(0)
+
+
+def check5():
+    if intvar5.get() == 1:
+        aptzrs_btn5.configure(fg=checked_color)
+        aptzrs_btn5Entry.configure(fg=checked_color, state=NORMAL)
+        stvar5.set('1')
+    elif intvar5.get() == 0:
+        aptzrs_btn5.configure(fg="black")
+        aptzrs_btn5Entry.configure(fg="black", state=DISABLED)
+        stvar5.set(0)
+
+
+def check6():
+    if intvar6.get() == 1:
+        drinksbtn1.configure(fg=checked_color)
+        drinksbtn1Entry.configure(fg=checked_color, state=NORMAL)
+        stvar6.set('1')
+    elif intvar6.get() == 0:
+        drinksbtn1.configure(fg="black")
+        drinksbtn1Entry.configure(fg="black", state=DISABLED)
+        stvar6.set(0)
+
+
+def check7():
+    if intvar7.get() == 1:
+        drinksbtn2.configure(fg=checked_color)
+        drinksbtn2Entry.configure(fg=checked_color, state=NORMAL)
+        stvar7.set('1')
+    elif intvar6.get() == 0:
+        drinksbtn2.configure(fg="black")
+        drinksbtn2Entry.configure(fg="black", state=DISABLED)
+        stvar7.set(0)
+
+
+def check8():
+    if intvar8.get() == 1:
+        drinksbtn3.configure(fg=checked_color)
+        drinksbtn3Entry.configure(fg=checked_color, state=NORMAL)
+        stvar8.set('1')
+    elif intvar8.get() == 0:
+        drinksbtn3.configure(fg="black")
+        drinksbtn3Entry.configure(fg="black", state=DISABLED)
+        stvar8.set(0)
+
+
+def check9():
+    if intvar9.get() == 1:
+        drinksbtn4.configure(fg=checked_color)
+        drinksbtn4Entry.configure(fg=checked_color, state=NORMAL)
+        stvar9.set('1')
+    elif intvar9.get() == 0:
+        drinksbtn4.configure(fg="black")
+        drinksbtn4Entry.configure(fg="black", state=DISABLED)
+        stvar9.set(0)
+
+
+def check10():
+    if intvar10.get() == 1:
+        drinksbtn5.configure(fg=checked_color)
+        drinksbtn5Entry.configure(fg=checked_color, state=NORMAL)
+        stvar10.set('1')
+    elif intvar10.get() == 0:
+        drinksbtn5.configure(fg="black")
+        drinksbtn5Entry.configure(fg="black", state=DISABLED)
+        stvar10.set(0)
+
+
+def check11():
+    if intvar11.get() == 1:
+        lunch_btn1.configure(fg=checked_color)
+        lunch_btn1Entry.configure(fg=checked_color, state=NORMAL)
+        stvar11.set('1')
+    elif intvar11.get() == 0:
+        lunch_btn1.configure(fg="black")
+        lunch_btn1Entry.configure(fg="black", state=DISABLED)
+        stvar11.set(0)
+
+
+def check12():
+    if intvar12.get() == 1:
+        lunch_btn2.configure(fg=checked_color)
+        lunch_btn2Entry.configure(fg=checked_color, state=NORMAL)
+        stvar12.set('1')
+    elif intvar12.get() == 0:
+        lunch_btn2.configure(fg="black")
+        lunch_btn2Entry.configure(fg="black", state=DISABLED)
+        stvar12.set(0)
+
+
+def check13():
+    if intvar13.get() == 1:
+        lunch_btn3.configure(fg=checked_color)
+        lunch_btn3Entry.configure(fg=checked_color, state=NORMAL)
+        stvar13.set('1')
+    elif intvar13.get() == 0:
+        lunch_btn3.configure(fg="black")
+        lunch_btn3Entry.configure(fg="black", state=DISABLED)
+        stvar13.set(0)
+
+
+def check14():
+    if intvar14.get() == 1:
+        lunch_btn4.configure(fg=checked_color)
+        lunch_btn4Entry.configure(fg=checked_color, state=NORMAL)
+        stvar14.set('1')
+    elif intvar14.get() == 0:
+        lunch_btn4.configure(fg="black")
+        lunch_btn4Entry.configure(fg="black", state=DISABLED)
+        stvar14.set(0)
+
+
+def check15():
+    if intvar15.get() == 1:
+        lunch_btn5.configure(fg=checked_color)
+        lunch_btn5Entry.configure(fg=checked_color, state=NORMAL)
+        stvar15.set('1')
+    elif intvar15.get() == 0:
+        lunch_btn5.configure(fg="black")
+        lunch_btn5Entry.configure(fg="black", state=DISABLED)
+        stvar15.set(0)
+
+
+def check16():
+    if intvar16.get() == 1:
+        dinner_btn1.configure(fg=checked_color)
+        dinner_btn1Entry.configure(fg=checked_color, state=NORMAL)
+        stvar16.set('1')
+    elif intvar16.get() == 0:
+        dinner_btn1.configure(fg="black")
+        dinner_btn1Entry.configure(fg="black", state=DISABLED)
+        stvar16.set(0)
+
+
+def check17():
+    if intvar17.get() == 1:
+        dinner_btn2.configure(fg=checked_color)
+        dinner_btn2Entry.configure(fg=checked_color, state=NORMAL)
+        stvar17.set('1')
+    elif intvar17.get() == 0:
+        dinner_btn2.configure(fg="black")
+        dinner_btn2Entry.configure(fg="black", state=DISABLED)
+        stvar17.set(0)
+
+
+def check18():
+    if intvar18.get() == 1:
+        dinner_btn3.configure(fg=checked_color)
+        dinner_btn3Entry.configure(fg=checked_color, state=NORMAL)
+        stvar18.set('1')
+    elif intvar18.get() == 0:
+        dinner_btn3.configure(fg="black")
+        dinner_btn3Entry.configure(fg="black", state=DISABLED)
+        stvar18.set(0)
+
+
+def check19():
+    if intvar19.get() == 1:
+        dinner_btn4.configure(fg=checked_color)
+        dinner_btn4Entry.configure(fg=checked_color, state=NORMAL)
+        stvar19.set('1')
+    elif intvar19.get() == 0:
+        dinner_btn4.configure(fg="black")
+        dinner_btn4Entry.configure(fg="black", state=DISABLED)
+        stvar19.set(0)
+
+
+def check20():
+    if intvar20.get() == 1:
+        dinner_btn5.configure(fg=checked_color)
+        dinner_btn5Entry.configure(fg=checked_color, state=NORMAL)
+        stvar20.set('1')
+    elif intvar20.get() == 0:
+        dinner_btn5.configure(fg="black")
+        dinner_btn5Entry.configure(fg="black", state=DISABLED)
+        stvar20.set(0)
+
+
+def check21():
+    if intvar21.get() == 1:
+        dsrt_btn1.configure(fg=checked_color)
+        dsrt_btn1Entry.configure(fg=checked_color, state=NORMAL)
+        stvar21.set('1')
+    elif intvar21.get() == 0:
+        dsrt_btn1.configure(fg="black")
+        dsrt_btn1Entry.configure(fg="black", state=DISABLED)
+        stvar21.set(0)
+
+
+def check22():
+    if intvar22.get() == 1:
+        dsrt_btn2.configure(fg=checked_color)
+        dsrt_btn2Entry.configure(fg=checked_color, state=NORMAL)
+        stvar22.set('1')
+    elif intvar22.get() == 0:
+        dsrt_btn2.configure(fg="black")
+        dsrt_btn2Entry.configure(fg="black", state=DISABLED)
+        stvar22.set(0)
+
+
+def check23():
+    if intvar23.get() == 1:
+        dsrt_btn3.configure(fg=checked_color)
+        dsrt_btn3Entry.configure(fg=checked_color, state=NORMAL)
+        stvar23.set('1')
+    elif intvar23.get() == 0:
+        dsrt_btn3.configure(fg="black")
+        dsrt_btn3Entry.configure(fg="black", state=DISABLED)
+        stvar23.set(0)
+
+
+def check24():
+    if intvar24.get() == 1:
+        dsrt_btn4.configure(fg=checked_color)
+        dsrt_btn4Entry.configure(fg=checked_color, state=NORMAL)
+        stvar24.set('1')
+    elif intvar24.get() == 0:
+        dsrt_btn4.configure(fg="black")
+        dsrt_btn4Entry.configure(fg="black", state=DISABLED)
+        stvar24.set(0)
+
+
+def check25():
+    if intvar25.get() == 1:
+        dsrt_btn5.configure(fg=checked_color)
+        dsrt_btn5Entry.configure(fg=checked_color, state=NORMAL)
+        stvar25.set('1')
+    elif intvar25.get() == 0:
+        dsrt_btn5.configure(fg="black")
+        dsrt_btn5Entry.configure(fg="black", state=DISABLED)
+        stvar25.set(0)
+
+
+def check26():
+    if intvar26.get() == 1:
+        sides_btn1.configure(fg=checked_color)
+        sides_btn1Entry.configure(fg=checked_color, state=NORMAL)
+        stvar26.set('1')
+    elif intvar26.get() == 0:
+        sides_btn1.configure(fg="black")
+        sides_btn1Entry.configure(fg="black", state=DISABLED)
+        stvar26.set(0)
+
+
+def check27():
+    if intvar27.get() == 1:
+        sides_btn2.configure(fg=checked_color)
+        sides_btn2Entry.configure(fg=checked_color, state=NORMAL)
+        stvar27.set('1')
+    elif intvar27.get() == 0:
+        sides_btn2.configure(fg="black")
+        sides_btn2Entry.configure(fg="black", state=DISABLED)
+        stvar27.set(0)
+
+
+def check28():
+    if intvar28.get() == 1:
+        sides_btn3.configure(fg=checked_color)
+        sides_btn3Entry.configure(fg=checked_color, state=NORMAL)
+        stvar28.set('1')
+    elif intvar28.get() == 0:
+        sides_btn3.configure(fg="black")
+        sides_btn3Entry.configure(fg="black", state=DISABLED)
+        stvar28.set(0)
+
+
+def check29():
+    if intvar29.get() == 1:
+        sides_btn4.configure(fg=checked_color)
+        sides_btn4Entry.configure(fg=checked_color, state=NORMAL)
+        stvar29.set('1')
+    elif intvar29.get() == 0:
+        sides_btn4.configure(fg="black")
+        sides_btn4Entry.configure(fg="black", state=DISABLED)
+        stvar29.set(0)
+
+
+def check30():
+    if intvar30.get() == 1:
+        sides_btn5.configure(fg=checked_color)
+        sides_btn5Entry.configure(fg=checked_color, state=NORMAL)
+        stvar30.set('1')
+    elif intvar30.get() == 0:
+        sides_btn5.configure(fg="black")
+        sides_btn5Entry.configure(fg="black", state=DISABLED)
+        stvar30.set(0)
+
+
+def quit_root():
+    yes_no = messagebox.askyesno('Quit!', "Do you want to close the app?")
+    if yes_no > 0:
+        root.destroy()
+
+
+def calculate():
+    food1 = stvar1.get()
+    food2 = stvar2.get()
+    food3 = stvar3.get()
+    food4 = stvar4.get()
+    food5 = stvar5.get()
+    food6 = stvar6.get()
+    food7 = stvar7.get()
+    food8 = stvar8.get()
+    food9 = stvar9.get()
+    food10 = stvar10.get()
+    food11 = stvar11.get()
+    food12 = stvar12.get()
+    food13 = stvar13.get()
+    food14 = stvar14.get()
+    food15 = stvar15.get()
+    food16 = stvar16.get()
+    food17 = stvar17.get()
+    food18 = stvar18.get()
+    food19 = stvar19.get()
+    food20 = stvar20.get()
+    food21 = stvar21.get()
+    food22 = stvar22.get()
+    food23 = stvar23.get()
+    food24 = stvar24.get()
+    food25 = stvar25.get()
+    food26 = stvar26.get()
+    food27 = stvar27.get()
+    food28 = stvar28.get()
+    food29 = stvar29.get()
+    food30 = stvar30.get()
+
+    #get the totals/tip and add them and calculate tax and calculate subtotal
+
+    total_aaptzrs = float(food1) * 4.99 + float(food2) * 1.99 + float(
+        food3) * 4.79 + float(food4) * 1.89 + float(food5) * 2.49
+
+    total_drinks = float(food6) * 1.99 + float(food7) * 1.99 + float(
+        food8) * 3.99 + float(food9) * 3.99 + float(food10) * 4.99
+
+    total_lunch = float(food11) * 6.50 + float(food12) * 6.50 + float(
+        food13) * 10.79 + float(food14) * 10.99 + float(food15) * 8.99
+
+    total_dinner = float(food16) * 11.99 + float(food17) * 7.99 + float(
+        food18) * 9.99 + float(food19) * 8.99 + float(food20) * 7.99
+
+    total_dessert = float(food21) * 3.99 + float(food22) * 2.99 + float(
+        food23) * 3.99 + float(food24) * 3.99 + float(food25) * 3.49
+
+    total_sides = float(food26) * 1.49 + float(food27) * 1.99 + float(
+        food28) * 1.99 + float(food29) * 1.99 + float(food30) * 1.49
+
+    foodtotal = total_aaptzrs + total_drinks + total_lunch + total_dinner + total_dessert + total_sides
+    foodtotal = format(foodtotal, '.2f')
+
+    if tipvar.get() == '':
+        tips = 0
+    else:
+        tips = tipvar.get()
+    tips_total = float(tips)
+
+    taxtotal = float(foodtotal) * 8.25 / 100
+    taxtotal = format(taxtotal, '.2f')
+
+    subtotals = float(foodtotal) + float(taxtotal) + float(tips_total)
+    subtotals = format(subtotals, '.2f')
+
+    receipt.config(state=NORMAL)
+    receipt.delete('1.0', 'end')
+    receipt.config(state=DISABLED)
+
+    #display totals in thier filds
+    foodcostvar.set('$' + foodtotal)
+    vartax.set('$' + taxtotal)
+    varsubtotals.set('$' + subtotals)
+    subtotals = float(subtotals)
+
+    subtotal_WDS = varsubtotals.get()
+    subtotal = subtotal_WDS.replace('$', '')
+
+    subtotal = float(subtotal)
+
+    if cashvar.get() == '':
+        cashpaid = 0
+    else:
+        cashpaid = cashvar.get()
+
+        cashpaid = float(cashpaid)
+
+    cashvstotal = cashpaid - subtotal
+    cashvstotal = float(cashvstotal)
+
+    if cashvstotal == 0:
+        duevar.set('$0.00')
+        changevar.set('$0.00')
+    elif cashvstotal > 0:
+        duevar.set(0)
+        changevar.set('$' + str(format(cashvstotal, '.2f')))
+    elif cashvstotal < 0:
+        cashvstotal = cashvstotal * -1
+        duevar.set('$' + str(format(cashvstotal, '.2f')))
+        changevar.set('$0.00')
+
+
+def paid():
+
+    subtotal_WDS = varsubtotals.get()
+    subtotal = subtotal_WDS.replace('$', '')
+
+    subtotal = float(subtotal)
+
+    if cashvar.get() == '':
+        cashpaid = 0
+    else:
+        cashpaid = cashvar.get()
+
+        cashpaid = float(cashpaid)
+
+    cashvstotal = cashpaid - subtotal
+    cashvstotal = float(cashvstotal)
+
+    if cashvstotal == 0:
+        duevar.set('$0.00')
+        changevar.set('$0.00')
+    elif cashvstotal > 0:
+        duevar.set('$0.00')
+        changevar.set('$' + str(format(cashvstotal, '.2f')))
+    elif cashvstotal < 0:
+        cashvstotal = cashvstotal * -1
+        duevar.set('$' + str(format(cashvstotal, '.2f')))
+        changevar.set('$0.00')
+
+
+# ==========receipt========-=======================
+def get_receipt():
+
+    if varsubtotals.get() == '$0.00':
+        messagebox.showinfo(
+            title='Error',
+            message=
+            'Error! Select food items and press CALCULATE before generating receipt.'
+        )
+    else:
+        receipt.config(state=NORMAL)
+        receipt.delete('1.0', 'end')
+        receipt_total = 0
+        if intvar1.get() == 1:
+            q = stvar1.get()
+            q = float(q)
+            value = q * 4.99
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert('1.0',
+                           '\nBhel Puri\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar2.get() == 1:
+            q = stvar2.get()
+            q = float(q)
+            value = q * 1.99
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(
+                INSERT, '\nKeema Samosa\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar3.get() == 1:
+            q = stvar3.get()
+            q = float(q)
+            value = q * 4.79
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(INSERT,
+                           '\nSamosa Chat\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar4.get() == 1:
+            q = stvar4.get()
+            q = float(q)
+            value = q * 1.89
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(INSERT,
+                           '\nPakora\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar5.get() == 1:
+            q = stvar5.get()
+            q = float(q)
+            value = q * 2.49
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(INSERT,
+                           '\nJilebi\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar6.get() == 1:
+            q = stvar6.get()
+            q = float(q)
+            value = q * 1.99
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(
+                INSERT, '\nBottled Water\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar7.get() == 1:
+            q = stvar7.get()
+            q = float(q)
+            value = q * 1.99
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(INSERT,
+                           '\nSoft Drinks\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar8.get() == 1:
+            q = stvar8.get()
+            q = float(q)
+            value = q * 3.99
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(
+                INSERT, '\nSalted Lassi\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar9.get() == 1:
+            q = stvar9.get()
+            q = float(q)
+            value = q * 3.99
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(INSERT,
+                           '\nSweet Lassi\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar10.get() == 1:
+            q = stvar10.get()
+            q = float(q)
+            value = q * 4.99
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(INSERT,
+                           '\nMilkshakes\t\t' + str(q) + '\t\t' + '$' + value)
+
+        #-------------
+        if intvar11.get() == 1:
+            q = stvar11.get()
+            q = float(q)
+            value = q * 6.50
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(
+                INSERT, '\nChicken Bihari\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar12.get() == 1:
+            q = stvar12.get()
+            q = float(q)
+            value = q * 6.50
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(INSERT,
+                           '\nBeef Bihari\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar13.get() == 1:
+            q = stvar13.get()
+            q = float(q)
+            value = q * 10.79
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(
+                INSERT, '\nShrimp Palak\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar14.get() == 1:
+            q = stvar14.get()
+            q = float(q)
+            value = q * 10.99
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(INSERT,
+                           '\nFish Masala\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar15.get() == 1:
+            q = stvar15.get()
+            q = float(q)
+            value = q * 8.99
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(
+                INSERT, '\nPalak Paneer\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar16.get() == 1:
+            q = stvar16.get()
+            q = float(q)
+            value = q * 11.99
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(
+                INSERT, '\nGoat Biryani\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar17.get() == 1:
+            q = stvar17.get()
+            q = float(q)
+            value = q * 7.99
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(
+                INSERT, '\nChicken Boti\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar18.get() == 1:
+            q = stvar18.get()
+            q = float(q)
+            value = q * 9.99
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(
+                INSERT, '\nGrilled Fish\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar19.get() == 1:
+            q = stvar19.get()
+            q = float(q)
+            value = q * 8.99
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(INSERT,
+                           '\nBeef Nihari\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar20.get() == 1:
+            q = stvar20.get()
+            q = float(q)
+            value = q * 7.99
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(INSERT,
+                           '\nHaleem\t\t' + str(q) + '\t\t' + '$' + value)
+
+        #-------------
+        if intvar21.get() == 1:
+            q = stvar21.get()
+            q = float(q)
+            value = q * 3.99
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(INSERT,
+                           '\nFalooda Cup\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar22.get() == 1:
+            q = stvar22.get()
+            q = float(q)
+            value = q * 2.99
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(INSERT,
+                           '\nGajar Halwa\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar23.get() == 1:
+            q = stvar23.get()
+            q = float(q)
+            value = q * 3.99
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(
+                INSERT, '\nKulfi Falooda\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar24.get() == 1:
+            q = stvar24.get()
+            q = float(q)
+            value = q * 3.99
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(INSERT,
+                           '\nGulab Jaman\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar25.get() == 1:
+            q = stvar25.get()
+            q = float(q)
+            value = q * 3.49
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(INSERT,
+                           '\nRasmalai\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar26.get() == 1:
+            q = stvar26.get()
+            q = float(q)
+            value = q * 1.49
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(INSERT,
+                           '\nGoat Rice\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar27.get() == 1:
+            q = stvar27.get()
+            q = float(q)
+            value = q * 1.99
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(INSERT,
+                           '\nParatha\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar28.get() == 1:
+            q = stvar28.get()
+            q = float(q)
+            value = q * 1.99
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(INSERT,
+                           '\nRoti\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar29.get() == 1:
+            q = stvar29.get()
+            q = float(q)
+            value = q * 1.99
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(INSERT,
+                           '\nSalad\t\t' + str(q) + '\t\t' + '$' + value)
+
+        if intvar30.get() == 1:
+            q = stvar30.get()
+            q = float(q)
+            value = q * 1.49
+            receipt_total = receipt_total + value
+            value = format(value, '.2f')
+            receipt.insert(INSERT,
+                           '\nNaan\t\t' + str(q) + '\t\t' + '$' + value)
+        receipt_total = format(receipt_total, '.2f')
+        receipt_total = '$' + receipt_total
+
+        receipt.insert(INSERT, '\n\nTotal Amount:' + '\t\t\t\t')
+        receipt.insert(END, receipt_total)
+
+        taxstring = vartax.get()
+        tax = taxstring
+
+        receipt.insert(INSERT, '\nTax Amount:' + '\t\t\t\t')
+        receipt.insert(END, tax)
+
+        sub_t = varsubtotals.get()
+        subtotal_rcp = sub_t
+
+        receipt.insert(INSERT, '\nSubtotal:' + '\t\t\t\t')
+        receipt.insert(END, subtotal_rcp)
+
+        if receipt_total != foodcostvar.get():
+            messagebox.showinfo(
+                title='Error',
+                message=
+                'Please select CALCULATE if you have checked new food item(s).'
+            )
+            receipt.delete('1.0', 'end')
+        receipt.config(state=DISABLED)
+
+
+def reset():
+    reset_yesno = messagebox.askyesno('Reset All!',
+                                      "Do you want to reset all?")
+    if reset_yesno > 0:
+
+        receipt.config(state=NORMAL)
+        receipt.delete('1.0', 'end')
+
+        intvar1.set(0)
+        intvar2.set(0)
+        intvar3.set(0)
+        intvar4.set(0)
+        intvar5.set(0)
+        intvar6.set(0)
+        intvar7.set(0)
+        intvar8.set(0)
+        intvar9.set(0)
+        intvar10.set(0)
+        intvar11.set(0)
+        intvar12.set(0)
+        intvar13.set(0)
+        intvar14.set(0)
+        intvar15.set(0)
+        intvar16.set(0)
+        intvar17.set(0)
+        intvar18.set(0)
+        intvar19.set(0)
+        intvar20.set(0)
+        intvar21.set(0)
+        intvar22.set(0)
+        intvar23.set(0)
+        intvar24.set(0)
+        intvar25.set(0)
+        intvar26.set(0)
+        intvar27.set(0)
+        intvar28.set(0)
+        intvar29.set(0)
+        intvar30.set(0)
+
+        aptzrs_btn1.configure(fg="black")
+        aptzrs_btn1Entry.configure(fg="black", state=DISABLED)
+
+        aptzrs_btn2.configure(fg="black")
+        aptzrs_btn2Entry.configure(fg="black", state=DISABLED)
+
+        aptzrs_btn3.configure(fg="black")
+        aptzrs_btn3Entry.configure(fg="black", state=DISABLED)
+
+        aptzrs_btn4.configure(fg="black")
+        aptzrs_btn4Entry.configure(fg="black", state=DISABLED)
+
+        aptzrs_btn5.configure(fg="black")
+        aptzrs_btn5Entry.configure(fg="black", state=DISABLED)
+
+        drinksbtn1.configure(fg="black")
+        drinksbtn1Entry.configure(fg="black", state=DISABLED)
+
+        drinksbtn2.configure(fg="black")
+        drinksbtn2Entry.configure(fg="black", state=DISABLED)
+
+        drinksbtn3.configure(fg="black")
+        drinksbtn3Entry.configure(fg="black", state=DISABLED)
+
+        drinksbtn4.configure(fg="black")
+        drinksbtn4Entry.configure(fg="black", state=DISABLED)
+
+        drinksbtn5.configure(fg="black")
+        drinksbtn5Entry.configure(fg="black", state=DISABLED)
+
+        lunch_btn1.configure(fg="black")
+        lunch_btn1Entry.configure(fg="black", state=DISABLED)
+
+        lunch_btn2.configure(fg="black")
+        lunch_btn2Entry.configure(fg="black", state=DISABLED)
+
+        lunch_btn3.configure(fg="black")
+        lunch_btn3Entry.configure(fg="black", state=DISABLED)
+
+        lunch_btn4.configure(fg="black")
+        lunch_btn4Entry.configure(fg="black", state=DISABLED)
+
+        lunch_btn5.configure(fg="black")
+        lunch_btn5Entry.configure(fg="black", state=DISABLED)
+
+        dinner_btn1.configure(fg="black")
+        dinner_btn1Entry.configure(fg="black", state=DISABLED)
+
+        dinner_btn2.configure(fg="black")
+        dinner_btn2Entry.configure(fg="black", state=DISABLED)
+
+        dinner_btn3.configure(fg="black")
+        dinner_btn3Entry.configure(fg="black", state=DISABLED)
+
+        dinner_btn4.configure(fg="black")
+        dinner_btn4Entry.configure(fg="black", state=DISABLED)
+
+        dinner_btn5.configure(fg="black")
+        dinner_btn5Entry.configure(fg="black", state=DISABLED)
+
+        dsrt_btn1.configure(fg="black")
+        dsrt_btn1Entry.configure(fg="black", state=DISABLED)
+
+        dsrt_btn2.configure(fg="black")
+        dsrt_btn2Entry.configure(fg="black", state=DISABLED)
+
+        dsrt_btn3.configure(fg="black")
+        dsrt_btn3Entry.configure(fg="black", state=DISABLED)
+
+        dsrt_btn4.configure(fg="black")
+        dsrt_btn4Entry.configure(fg="black", state=DISABLED)
+
+        dsrt_btn5.configure(fg="black")
+        dsrt_btn5Entry.configure(fg="black", state=DISABLED)
+
+        sides_btn1.configure(fg="black")
+        sides_btn1Entry.configure(fg="black", state=DISABLED)
+
+        sides_btn2.configure(fg="black")
+        sides_btn2Entry.configure(fg="black", state=DISABLED)
+
+        sides_btn3.configure(fg="black")
+        sides_btn3Entry.configure(fg="black", state=DISABLED)
+
+        sides_btn4.configure(fg="black")
+        sides_btn4Entry.configure(fg="black", state=DISABLED)
+
+        sides_btn5.configure(fg="black")
+        sides_btn5Entry.configure(fg="black", state=DISABLED)
+
+        stvar1.set(0)
+        stvar1.set(0)
+        stvar2.set(0)
+        stvar3.set(0)
+        stvar4.set(0)
+        stvar5.set(0)
+        stvar6.set(0)
+        stvar7.set(0)
+        stvar8.set(0)
+        stvar9.set(0)
+        stvar10.set(0)
+        stvar11.set(0)
+        stvar12.set(0)
+        stvar13.set(0)
+        stvar14.set(0)
+        stvar15.set(0)
+        stvar16.set(0)
+        stvar17.set(0)
+        stvar18.set(0)
+        stvar19.set(0)
+        stvar20.set(0)
+        stvar21.set(0)
+        stvar22.set(0)
+        stvar23.set(0)
+        stvar24.set(0)
+        stvar25.set(0)
+        stvar26.set(0)
+        stvar27.set(0)
+        stvar28.set(0)
+        stvar29.set(0)
+        stvar30.set(0)
+
+        foodcostvar.set('$0.00')
+        vartax.set('$0.00')
+        vartotal.set('$0.00')
+        varsubtotals.set('$0.00')
+        tipvar.set('')
+        cashvar.set('')
+        duevar.set('$0.00')
+        changevar.set('$0.00')
+
+
+def help():
+    messagebox.showinfo(
+        title='HOW TO USE',
+        message=
+        '1. Select Checkbuttons\n2. Enter Quantity in the box\n3. Enter TIP Amount\n4. Select Calculate\n5. Enter Cash Amount\n6. Select PAY\n6. Select GET RECEIPT'
+    )
+
+
+# =================== FOOD ITEMS - MEALS DISCTIONARIES======================
+
+# dict_aapetizers={'Bhel Puri test': 4.99, 'Keemas Samosa': 1.99,
+#                    'Samosa Chat': 4.79, 'Pakora': 1.89, 'Jilebi': 2.49}
+
+# =====================APPETIZERS - btn & entry=============== intvar1-5, stvar1-5====
+
+apptzrs_head = Label(
+    f1,
+    bg=content_1,
+    text="APPETIZERS",
+    font="arial 16 bold",
+)
+apptzrs_head.grid(row=0, columnspan=2, sticky="w", pady=5)
+
+aptzrs_btn1 = Checkbutton(f1,
+                          bg=content_1,
+                          text='Bhel Puri $4.99\t',
+                          variable=intvar1,
+                          onvalue=1,
+                          offvalue=0,
+                          command=check1)
+aptzrs_btn1.grid(row=1, column=0, sticky='w')
+
+aptzrs_btn1Entry = Entry(f1,
+                         bg=content_1,
+                         width=10,
+                         font="comic,bold",
+                         textvariable=stvar1,
+                         justify=LEFT,
+                         state=DISABLED)
+aptzrs_btn1Entry.grid(row=1, column=1)
+
+aptzrs_btn2 = Checkbutton(f1,
+                          bg=content_1,
+                          text="Keema Samosa $1.99\t",
+                          variable=intvar2,
+                          onvalue=1,
+                          offvalue=0,
+                          command=check2)
+aptzrs_btn2.grid(row=2, column=0, sticky='w')
+
+aptzrs_btn2Entry = Entry(
+    f1,
+    bg=content_1,
+    width=10,
+    textvariable=stvar2,
+    justify=LEFT,
+    state=DISABLED,
+)
+aptzrs_btn2Entry.grid(row=2, column=1)
+
+aptzrs_btn3 = Checkbutton(f1,
+                          bg=content_1,
+                          text="Samosa Chat $4.79\t",
+                          variable=intvar3,
+                          onvalue=1,
+                          offvalue=0,
+                          command=check3)
+aptzrs_btn3.grid(row=3, column=0, sticky='w')
+
+aptzrs_btn3Entry = Entry(
+    f1,
+    bg=content_1,
+    textvariable=stvar3,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+aptzrs_btn3Entry.grid(row=3, column=1)
+
+aptzrs_btn4 = Checkbutton(f1,
+                          bg=content_1,
+                          text="Pakora $1.89\t",
+                          variable=intvar4,
+                          onvalue=1,
+                          offvalue=0,
+                          command=check4)
+aptzrs_btn4.grid(row=4, column=0, sticky='w')
+
+aptzrs_btn4Entry = Entry(
+    f1,
+    bg=content_1,
+    textvariable=stvar4,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+aptzrs_btn4Entry.grid(row=4, column=1)
+
+aptzrs_btn5 = Checkbutton(f1,
+                          bg=content_1,
+                          text="Jilebi $2.49\t",
+                          variable=intvar5,
+                          onvalue=1,
+                          offvalue=0,
+                          command=check5)
+aptzrs_btn5.grid(row=5, column=0, sticky='w')
+
+aptzrs_btn5Entry = Entry(
+    f1,
+    bg=content_1,
+    textvariable=stvar5,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+aptzrs_btn5Entry.grid(row=5, column=1)
+
+# =========== DRINKS========== intvar 6-10, stvar 6-10======
+drinks_head = Label(
+    f2,
+    bg=content_1,
+    text="DRINKS",
+    font="arial 16 bold",
+)
+drinks_head.grid(row=0, columnspan=2, sticky="w", pady=5)
+
+drinksbtn1 = Checkbutton(f2,
+                         bg=content_1,
+                         text="Bottled Water $1.99\t",
+                         variable=intvar6,
+                         onvalue=1,
+                         offvalue=0,
+                         command=check6)
+drinksbtn1.grid(row=1, column=0, sticky='w')
+
+drinksbtn1Entry = Entry(
+    f2,
+    bg=content_1,
+    textvariable=stvar6,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+drinksbtn1Entry.grid(row=1, column=1)
+
+drinksbtn2 = Checkbutton(
+    f2,
+    bg=content_1,
+    text="Soft Drinks $1.99\t",
+    variable=intvar7,
+    onvalue=1,
+    offvalue=0,
+    command=check7,
+)
+drinksbtn2.grid(row=2, column=0, sticky='w')
+
+drinksbtn2Entry = Entry(
+    f2,
+    bg=content_1,
+    textvariable=stvar7,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+drinksbtn2Entry.grid(row=2, column=1)
+
+drinksbtn3 = Checkbutton(f2,
+                         bg=content_1,
+                         text="Salted Lassi $3.99\t",
+                         variable=intvar8,
+                         onvalue=1,
+                         offvalue=0,
+                         command=check8)
+drinksbtn3.grid(row=3, column=0)
+
+drinksbtn3Entry = Entry(
+    f2,
+    bg=content_1,
+    textvariable=stvar8,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+drinksbtn3Entry.grid(row=3, column=1, sticky='w')
+
+drinksbtn4 = Checkbutton(f2,
+                         bg=content_1,
+                         text="Sweet Lassi $3.99\t",
+                         variable=intvar9,
+                         onvalue=1,
+                         offvalue=0,
+                         command=check9)
+drinksbtn4.grid(row=4, column=0, sticky='w')
+
+drinksbtn4Entry = Entry(
+    f2,
+    bg=content_1,
+    textvariable=stvar9,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+drinksbtn4Entry.grid(row=4, column=1)
+
+drinksbtn5 = Checkbutton(f2,
+                         bg=content_1,
+                         text="Milkshakes $4.99\t",
+                         variable=intvar10,
+                         onvalue=1,
+                         offvalue=0,
+                         command=check10)
+drinksbtn5.grid(row=5, column=0, sticky='w')
+
+drinksbtn5Entry = Entry(
+    f2,
+    bg=content_1,
+    textvariable=stvar10,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+drinksbtn5Entry.grid(row=5, column=1)
+
+# =========== LUNCH SPECIAL==========intvar 11-15, stvar 11-15==========
+lunch_head = Label(
+    f3,
+    bg=content_1,
+    text="LUNCH SPECALS",
+    font="arial 16 bold",
+)
+lunch_head.grid(row=0, columnspan=2, sticky="w", pady=5)
+
+lunch_btn1 = Checkbutton(f3,
+                         bg=content_1,
+                         text="Chicken Bihari $6.50\t",
+                         variable=intvar11,
+                         onvalue=1,
+                         offvalue=0,
+                         command=check11)
+lunch_btn1.grid(row=1, column=0, sticky='w')
+
+lunch_btn1Entry = Entry(
+    f3,
+    bg=content_1,
+    textvariable=stvar11,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+lunch_btn1Entry.grid(row=1, column=1)
+
+lunch_btn2 = Checkbutton(f3,
+                         bg=content_1,
+                         text="Beef Bihari $6.50\t",
+                         variable=intvar12,
+                         onvalue=1,
+                         offvalue=0,
+                         command=check12)
+lunch_btn2.grid(row=2, column=0, sticky='w')
+
+lunch_btn2Entry = Entry(
+    f3,
+    bg=content_1,
+    textvariable=stvar12,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+lunch_btn2Entry.grid(row=2, column=1)
+
+lunch_btn3 = Checkbutton(f3,
+                         bg=content_1,
+                         text="Shrimp Palak $10.79\t",
+                         variable=intvar13,
+                         onvalue=1,
+                         offvalue=0,
+                         command=check13)
+lunch_btn3.grid(row=3, column=0, sticky='w')
+
+lunch_btn3Entry = Entry(
+    f3,
+    bg=content_1,
+    textvariable=stvar13,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+lunch_btn3Entry.grid(row=3, column=1)
+
+lunch_btn4 = Checkbutton(f3,
+                         bg=content_1,
+                         text="Fish Masala $10.99\t",
+                         variable=intvar14,
+                         onvalue=1,
+                         offvalue=0,
+                         command=check14)
+lunch_btn4.grid(row=4, column=0, sticky='w')
+
+lunch_btn4Entry = Entry(
+    f3,
+    bg=content_1,
+    textvariable=stvar14,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+lunch_btn4Entry.grid(row=4, column=1)
+
+lunch_btn5 = Checkbutton(f3,
+                         bg=content_1,
+                         text="Palak Paneer $8.99\t",
+                         variable=intvar15,
+                         onvalue=1,
+                         offvalue=0,
+                         command=check15)
+lunch_btn5.grid(row=5, column=0, sticky='w')
+
+lunch_btn5Entry = Entry(
+    f3,
+    bg=content_1,
+    textvariable=stvar15,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+lunch_btn5Entry.grid(row=5, column=1)
+
+# ========== DINNER==============intvar, stvar 16-20========
+
+dinner_head = Label(
+    f4,
+    bg=content_2,
+    text="DINNER",
+    font="arial 16 bold",
+)
+dinner_head.grid(row=0, columnspan=2, sticky="w", pady=5)
+
+dinner_btn1 = Checkbutton(f4,
+                          bg=content_2,
+                          text="Goat Biryani $11.99\t",
+                          variable=intvar16,
+                          onvalue=1,
+                          offvalue=0,
+                          command=check16)
+dinner_btn1.grid(row=1, column=0, sticky='w')
+
+dinner_btn1Entry = Entry(
+    f4,
+    bg=content_2,
+    textvariable=stvar16,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+dinner_btn1Entry.grid(row=1, column=1)
+
+dinner_btn2 = Checkbutton(f4,
+                          bg=content_2,
+                          text="Chicken Boti $7.99\t",
+                          variable=intvar17,
+                          onvalue=1,
+                          offvalue=0,
+                          command=check17)
+dinner_btn2.grid(row=2, column=0, sticky='w')
+
+dinner_btn2Entry = Entry(
+    f4,
+    bg=content_2,
+    textvariable=stvar17,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+dinner_btn2Entry.grid(row=2, column=1)
+
+dinner_btn3 = Checkbutton(f4,
+                          bg=content_2,
+                          text="Grilled Fish $9.99\t",
+                          variable=intvar18,
+                          onvalue=1,
+                          offvalue=0,
+                          command=check18)
+dinner_btn3.grid(row=3, column=0, sticky='w')
+
+dinner_btn3Entry = Entry(
+    f4,
+    bg=content_2,
+    textvariable=stvar18,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+dinner_btn3Entry.grid(row=3, column=1)
+
+dinner_btn4 = Checkbutton(f4,
+                          bg=content_2,
+                          text="Beef Nihari $8.99\t",
+                          variable=intvar19,
+                          onvalue=1,
+                          offvalue=0,
+                          command=check19)
+dinner_btn4.grid(row=4, column=0, sticky='w')
+
+dinner_btn4Entry = Entry(
+    f4,
+    bg=content_2,
+    textvariable=stvar19,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+dinner_btn4Entry.grid(row=4, column=1)
+
+dinner_btn5 = Checkbutton(f4,
+                          bg=content_2,
+                          text="Haleem $7.99\t",
+                          variable=intvar20,
+                          onvalue=1,
+                          offvalue=0,
+                          command=check20)
+dinner_btn5.grid(row=5, column=0, sticky='w')
+
+dinner_btn5Entry = Entry(
+    f4,
+    bg=content_2,
+    textvariable=stvar20,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+dinner_btn5Entry.grid(row=5, column=1)
+
+# ===================== DESSERT=======intvar, stvar 21-25=======
+dsrt_head = Label(
+    f5,
+    bg=content_2,
+    text="DESSERT",
+    font="arial 16 bold",
+)
+dsrt_head.grid(row=0, columnspan=2, sticky="w", pady=5)
+
+dsrt_btn1 = Checkbutton(f5,
+                        bg=content_2,
+                        text="Falooda Cup $3.99\t",
+                        variable=intvar21,
+                        onvalue=1,
+                        offvalue=0,
+                        command=check21)
+dsrt_btn1.grid(row=1, column=0, sticky='w')
+
+dsrt_btn1Entry = Entry(
+    f5,
+    bg=content_2,
+    textvariable=stvar21,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+dsrt_btn1Entry.grid(row=1, column=1)
+
+dsrt_btn2 = Checkbutton(f5,
+                        bg=content_2,
+                        text="Gajar Halwa $2.99\t",
+                        variable=intvar22,
+                        onvalue=1,
+                        offvalue=0,
+                        command=check22)
+dsrt_btn2.grid(row=2, column=0, sticky='w')
+
+dsrt_btn2Entry = Entry(
+    f5,
+    bg=content_2,
+    textvariable=stvar22,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+dsrt_btn2Entry.grid(row=2, column=1)
+
+dsrt_btn3 = Checkbutton(f5,
+                        bg=content_2,
+                        text="Kulfi Falooda $3.99\t",
+                        variable=intvar23,
+                        onvalue=1,
+                        offvalue=0,
+                        command=check23)
+dsrt_btn3.grid(row=3, column=0, sticky='w')
+
+dsrt_btn3Entry = Entry(
+    f5,
+    bg=content_2,
+    textvariable=stvar23,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+dsrt_btn3Entry.grid(row=3, column=1)
+
+dsrt_btn4 = Checkbutton(f5,
+                        bg=content_2,
+                        text="Gulab Jaman $3.99\t",
+                        variable=intvar24,
+                        onvalue=1,
+                        offvalue=0,
+                        command=check24)
+dsrt_btn4.grid(row=4, column=0, sticky='w')
+
+dsrt_btn4Entry = Entry(
+    f5,
+    bg=content_2,
+    textvariable=stvar24,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+dsrt_btn4Entry.grid(row=4, column=1)
+
+dsrt_btn5 = Checkbutton(f5,
+                        bg=content_2,
+                        text="Rasmalai $3.49\t",
+                        variable=intvar25,
+                        onvalue=1,
+                        offvalue=0,
+                        command=check25)
+dsrt_btn5.grid(row=5, column=0, sticky='w')
+
+dsrt_btn5Entry = Entry(
+    f5,
+    bg=content_2,
+    textvariable=stvar25,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+dsrt_btn5Entry.grid(row=5, column=1)
+
+# ======SIDES =============== intvar, strvar 26-30=========
+sides_head = Label(
+    f6,
+    bg=content_2,
+    text="Sides",
+    font="arial 16 bold",
+)
+sides_head.grid(row=0, columnspan=2, sticky="w", pady=5)
+
+sides_btn1 = Checkbutton(f6,
+                         bg=content_2,
+                         text="Rice $1.49\t",
+                         variable=intvar26,
+                         onvalue=1,
+                         offvalue=0,
+                         command=check26)
+sides_btn1.grid(row=1, column=0, sticky='w')
+
+sides_btn1Entry = Entry(
+    f6,
+    bg=content_2,
+    textvariable=stvar26,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+sides_btn1Entry.grid(row=1, column=1)
+sides_btn2 = Checkbutton(f6,
+                         bg=content_2,
+                         text="Paratha $1.99\t",
+                         variable=intvar27,
+                         onvalue=1,
+                         offvalue=0,
+                         command=check27)
+sides_btn2.grid(row=2, column=0, sticky='w')
+
+sides_btn2Entry = Entry(
+    f6,
+    bg=content_2,
+    textvariable=stvar27,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+sides_btn2Entry.grid(row=2, column=1)
+
+sides_btn3 = Checkbutton(f6,
+                         bg=content_2,
+                         text="Roti $1.99\t",
+                         variable=intvar28,
+                         onvalue=1,
+                         offvalue=0,
+                         command=check28)
+sides_btn3.grid(row=3, column=0, sticky='w')
+
+sides_btn3Entry = Entry(
+    f6,
+    bg=content_2,
+    textvariable=stvar28,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+sides_btn3Entry.grid(row=3, column=1)
+
+sides_btn4 = Checkbutton(f6,
+                         bg=content_2,
+                         text="Salad $1.99\t",
+                         variable=intvar29,
+                         onvalue=1,
+                         offvalue=0,
+                         command=check29)
+sides_btn4.grid(row=4, column=0, sticky='w')
+
+sides_btn4Entry = Entry(
+    f6,
+    bg=content_2,
+    textvariable=stvar29,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+sides_btn4Entry.grid(row=4, column=1)
+
+sides_btn5 = Checkbutton(f6,
+                         bg=content_2,
+                         text="Naan $1.49\t",
+                         variable=intvar30,
+                         onvalue=1,
+                         offvalue=0,
+                         command=check30)
+sides_btn5.grid(row=5, column=0, sticky='w')
+
+sides_btn5Entry = Entry(
+    f6,
+    bg=content_2,
+    textvariable=stvar30,
+    width=10,
+    justify=LEFT,
+    state=DISABLED,
+)
+sides_btn5Entry.grid(row=5, column=1)
+
+# =========== TOTAL BUTTONS========================
+help_btn = Button(f7,
+                  bg=bottom_bj_color,
+                  width=10,
+                  text="How to USE",
+                  font="comic 15 bold",
+                  fg="red",
+                  command=help)
+help_btn.grid(row=0, column=0, sticky="ew", pady=2)
+
+calc_btn = Button(f7,
+                  bg=bottom_bj_color,
+                  width=12,
+                  text="CALCULATE",
+                  font="comic 20 bold",
+                  fg="green",
+                  command=calculate)
+calc_btn.grid(row=1, column=0, sticky="w", pady=2)
+
+reset_btn = Button(
+    f7,
+    bg=bottom_bj_color,
+    width=12,
+    text="RESET ALL",
+    font="comic 20 bold",
+    fg="green",
+    command=reset,
+)
+reset_btn.grid(row=2, column=0, sticky="w", pady=2)
+
+exit_btn = Button(f7,
+                  bg=bottom_bj_color,
+                  width=12,
+                  text="EXIT",
+                  font="comic 20 bold",
+                  fg="green",
+                  command=quit_root)
+exit_btn.grid(row=3, column=0, sticky="w", pady=2)
+
+# ========== lables for total disopaly======
+tip_lbl = Label(
+    f8,
+    bg=bottom_bj_color,
+    height=1,
+    text="Enter Tip",
+    font="comic 20 bold",
+)
+tip_lbl.grid(row=0, column=0, sticky='w')
+food_lbl = Label(
+    f8,
+    bg=bottom_bj_color,
+    height=1,
+    text="FOOD",
+    font="comic 20 bold",
+)
+food_lbl.grid(row=1, column=0, sticky='w')
+
+taxes_lbl = Label(
+    f8,
+    bg=bottom_bj_color,
+    height=1,
+    text="TAXES",
+    font="comic 20 bold",
+)
+taxes_lbl.grid(row=2, column=0, sticky='w')
+
+total_lbl = Label(
+    f8,
+    bg=bottom_bj_color,
+    height=1,
+    text="TOTAL",
+    font="comic 20 bold",
+)
+total_lbl.grid(row=3, column=0, sticky='w')
+
+# =================display totals / amounts===========
+disabled_color = 'blue'
+tipchosen = Entry(f8,
+                  width=10,
+                  textvariable=tipvar,
+                  font="comic 20 bold",
+                  state=NORMAL,
+                  fg=entry_pmnt_color)
+tipchosen.grid(column=1, row=0)
+
+food_cost = Entry(f8,
+                  width=10,
+                  font="comic 20 bold",
+                  state=DISABLED,
+                  textvariable=foodcostvar,
+                  fg=disabled_color)
+food_cost.grid(row=1, column=1)
+
+tax_amnt = Entry(f8,
+                 width=10,
+                 textvariable=vartax,
+                 font="comic 20 bold",
+                 state=DISABLED,
+                 fg=disabled_color)
+tax_amnt.grid(row=2, column=1, sticky='e')
+
+total_amnt = Entry(f8,
+                   width=10,
+                   textvariable=varsubtotals,
+                   font="comic 20 bold",
+                   state=DISABLED,
+                   fg=entry_pmnt_color)
+total_amnt.grid(row=3, column=1, sticky='e')
+
+# ======== DUE/ CASH =========
+
+cash_lbl = Label(
+    f9,
+    bg=bottom_bj_color,
+    height=1,
+    text="CASH",
+    font="comic 20 bold",
+)
+cash_lbl.grid(row=0, column=1, sticky='w')
+
+due_lbl = Label(
+    f9,
+    bg=bottom_bj_color,
+    height=1,
+    text="DUE",
+    font="comic 20 bold",
+)
+due_lbl.grid(row=1, column=1, sticky='w')
+
+change_lbl = Label(
+    f9,
+    bg=bottom_bj_color,
+    height=1,
+    text="CHANGE",
+    font="comic 20 bold",
+)
+change_lbl.grid(row=2, column=1, sticky='w')
+
+# cash due and change amounts display=============
+cash_Entry = Entry(f9,
+                   textvariable=cashvar,
+                   width=10,
+                   font="comic 20 bold",
+                   state=NORMAL)
+cash_Entry.grid(row=0, column=2, sticky="e")
+
+due_amnt = Entry(f9,
+                 bg=bottom_bj_color,
+                 width=10,
+                 textvariable=duevar,
+                 font="comic 20 bold",
+                 state=DISABLED,
+                 fg=disabled_color)
+due_amnt.grid(row=1, column=2, sticky='e')
+
+change_amnt = Entry(f9,
+                    bg=bottom_bj_color,
+                    width=10,
+                    textvariable=changevar,
+                    font="comic 20 bold",
+                    state=DISABLED,
+                    fg=disabled_color)
+change_amnt.grid(row=2, column=2, sticky='e')
+
+pay_btn = Button(f9,
+                 bg='red',
+                 text='PAY',
+                 font='comic 20 bold',
+                 fg="green",
+                 bd=5,
+                 command=paid)
+pay_btn.grid(row=0, column=0, rowspan=3, sticky='ns')
+
+#=============== Receipt===================================
+
+ref = random.randint(1000, 9999)
+ordernumber = str(ref)
+
+var_receipt = StringVar()
+
+rcpt_head_frame = Frame(rcp_frame, bg=content_1, width=400, height=200)
+rcpt_head_frame.pack(side='top')
+
+rcpt_item_frame = Frame(rcp_frame, bg=content_1, width=400, height=800)
+rcpt_item_frame.pack(side='top')
+
+rcpt_paid_frame = Frame(rcp_frame, bg=content_1, width=400, height=200)
+rcpt_paid_frame.pack(side='bottom')
+
+receipthead = Text(rcpt_head_frame,
+                   font='arial 10 italic',
+                   bg=content_1,
+                   width=45,
+                   height=6)
+receipthead.pack(expand=True, fill='both')
+receipthead.insert(
+    INSERT,
+    '\t     INDO-PAK FOOD PALACE\n             9449 Briar Forest Dr Houston TX 77063\n\n'
+)
+
+receipt = Text(rcpt_item_frame,
+               font='arial 10 italic',
+               bg=content_1,
+               width=45,
+               height=40)
+receipt.pack(expand=True, fill='both')
+
+receipthead.insert(INSERT, 'Order Number: ' + 'MTX' + ordernumber)
+receipthead.insert(INSERT, '\n\nItem\t\tQty\t\tAmount\n')
+
+receipthead.config(state=DISABLED)
+
+btn_recpt = Button(rcpt_paid_frame,
+                   width=15,
+                   bg=content_1,
+                   font='comic 20 bold',
+                   text='GET RECEIPT',
+                   command=get_receipt)
+btn_recpt.pack(side='top', anchor=N)
+
+root.mainloop()
